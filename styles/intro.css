@@ -1,0 +1,161 @@
+.introducao {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 5% 0 2%;
+}
+
+.introducao__saudacao {
+  font-family: var(--font-principal);
+  font-weight: 700;
+  color: hsl(0, 0%, 100%);
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+.introducao__texto {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #d4d4d4;
+  font-family: var(--font-texto);
+  margin: 2.5rem 0;
+}
+
+.introducao__texto__destaque{
+    font-weight: 700;
+    color: var(--verde-claro);
+
+    /* Gradiente aplicado ao fundo */
+    /* background: linear-gradient(90deg, #28e07b, #3883da,#8728e0,#e07025, #e92929, #f5d51f);
+
+    /* Faz o fundo preencher apenas o texto */
+    /* -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+
+    /* Para compatibilidade com outros navegadores */
+    /* background-clip: text;
+    color: transparent; */
+
+    /* Opcional: brilho suave */
+    /* text-shadow: 0 0 15px rgba(255, 255, 255, 0.568); */
+}
+
+.introducao__tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  font-family: var(--font-texto);
+  margin-top: 2rem;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  gap: 6px;
+  font-size: 0.9rem;
+  padding: 5px 20px;
+  border: 3px solid var(--verde);
+  border-radius: 32px;
+  margin: 0 5rem;
+  background: radial-gradient(circle, #004e523d, #0000006b );
+  color: #dbdbdb;
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: all 0.25s ease;
+  cursor: default;
+}
+
+.bola{
+    font-family: var(--font-principal);
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    padding-bottom: 2px;
+
+    background: radial-gradient(circle, #74cf74,#5dcab4,#40c8f1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* Para compatibilidade com outros navegadores */
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 10px rgb(0, 255, 204);
+}
+
+/* .tag::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 3px; /* espessura da borda */
+  /* border-radius: inherit;
+  background: linear-gradient(45deg,#77d377,#50af9c,#29809b); */
+
+  /* máscara pra deixar só a borda */
+  /* -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+} */
+
+.tag:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* .ui { background-color: #441470; }
+.ux { background-color: #225085; }
+.web { background-color: #115e34; }
+.responsive { background-color: #8b4414; }
+.brand { background-color: #7a1717; }
+.prototype { background-color: #887610; } */
+
+@media screen and (max-width: 600px) {
+    
+    /* 1. Ajuste de Margens/Padding da Seção Principal */
+    .introducao {
+        /* Reduz o padding lateral para ocupar mais a tela */
+        padding: 40px 5%; 
+        /* Se a introdução estiver usando flexbox (coluna), pode precisar de ajuste de gap */
+        gap: 30px; 
+        flex-direction: column;
+    }
+    
+    /* 2. Redução do Tamanho do Texto de Saudação */
+    .introducao__saudacao {
+        font-size: 2rem; /* Reduz o tamanho da saudação */
+        margin-bottom: 15px;
+    }
+
+    /* 3. Redução do Tamanho do Bloco de Texto Principal */
+    .introducao__texto {
+        /* Reduz a fonte do texto principal para melhor leitura em mobile */
+        font-size: 1.5rem; 
+        line-height: 1.3;
+        /* Se você tiver um max-width fixo no desktop, remova-o aqui */
+        max-width: none; 
+        margin: 0 0 -10px;
+    }
+    
+    /* 4. Ajuste dos Blocos de Tags */
+    .introducao__tags {
+        /* Se as tags estiverem em uma linha, force-as a se quebrar */
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: center; /* Centraliza as tags quando elas quebram */
+        gap: 10px; /* Reduz o espaçamento entre as tags */
+    }
+    
+    /* 5. Ajuste Individual das Tags */
+    .tag {
+        font-size: 0.8rem; /* Fonte menor para a tag */
+        padding: 2px 15px; /* Padding menor */
+        margin: 0;
+    }
+}

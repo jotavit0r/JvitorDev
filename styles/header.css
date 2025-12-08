@@ -1,0 +1,191 @@
+.cabecalho{
+    /* desktop: logo esquerda, nav direita */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centraliza verticalmente */
+    padding-top: 1rem; /* Espaçamento lateral */
+    position: fixed; /* Fixa o header no topo */
+    width: 100%;
+    top: 0;
+    z-index: 10000;
+    gap: 1rem;
+}
+
+.menu-hamburger {
+    display: none; /* ESSENCIAL: Garante que só aparece no mobile */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10001; 
+}
+
+/* Estilo que desenha as três linhas (linha central) */
+.hamburger-icon {
+    display: block;
+    width: 22px;
+    height: 2.5px;
+    background-color: var(--branco); /* Usa a cor do seu texto */
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Desenha a linha de cima */
+.hamburger-icon::before {
+    content: '';
+    display: block;
+    width: 22px;
+    height: 2.5px;
+    background-color: var(--branco);
+    position: absolute;
+    transform: translateY(-7px); /* Move 10px para cima */
+    transition: all 0.3s ease;
+}
+
+/* Desenha a linha de baixo */
+.hamburger-icon::after {
+    content: '';
+    display: block;
+    width: 22px;
+    height: 2.5px;
+    background-color: var(--branco);
+    position: absolute;
+    transform: translateY(7px); /* Move 10px para baixo */
+    transition: all 0.3s ease;
+}
+
+/* 1. Abre o menu lateral no Mobile */
+.cabecalho__nav.ativo {
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidade */
+}
+
+/* 2. Animação para transformar o ícone em "X" */
+
+/* Esconde a barra central do hamburger */
+.menu-hamburger.ativo .hamburger-icon {
+    background-color: transparent; 
+}
+
+/* Gira a barra de cima em 45 graus */
+.menu-hamburger.ativo .hamburger-icon::before {
+    transform: rotate(45deg) translateY(0); 
+}
+
+/* Gira a barra de baixo em -45 graus */
+.menu-hamburger.ativo .hamburger-icon::after {
+    transform: rotate(-45deg) translateY(0); 
+}
+
+
+.cabecalho__logo{
+    width: 65px;
+    height: auto;
+}
+
+.cabecalho__secoes{
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    background: radial-gradient(circle, #017a80,#004e52);
+    padding: 0.6rem 1rem;
+    border: 1px solid var(--branco);
+    border-radius: 3rem;
+    align-items: center;
+}
+
+.secao__link{
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    text-decoration: none;
+    font-family: var(--font-principal);
+    font-weight: 500;
+    color: var(--branco);
+    transition: all 0.3s ease;
+}
+
+.secao__icon{
+    display: none;
+    width: 20px;
+    height: auto;
+}
+
+.secao__link:hover,
+.secao__link.ativo{
+    background: var(--branco);
+    color: var(--preto);
+    padding: 0.4rem 0.8rem;
+    border-radius: 3rem;
+}
+
+.secao__link:hover .secao__icon,
+.secao__link.ativo .secao__icon{
+    display: block;
+}
+
+@media screen and (max-width: 480px) {
+    
+    /* 1. Ajustes no Cabeçalho */
+    .cabecalho {
+        gap: 0.8rem; 
+    }
+
+    .cabecalho__logo{
+        width: 65px; /* Logo menor no mobile */
+    }
+    
+    /* 2. MOSTRAR BOTÃO HAMBÚRGUER */
+    .menu-hamburger {
+        display: block; /* O botão, que estava 'display: none', agora aparece */
+    }
+
+    /* 3. ESCONDER NAVEGAÇÃO DESKTOP E PREPARAR MENU LATERAL */
+    .cabecalho__nav {
+        position: absolute;
+        top: 110%;
+        width: 80%; 
+        max-width: 350px; 
+        height: 360px; 
+        background: radial-gradient(circle, #017a80,#017a80,#004e52); 
+        transition: right 0.4s ease; 
+        z-index: 9998;
+        opacity: 0; /* Escondido */
+        pointer-events: none; /* Não recebe cliques */
+        transition: all 0.4s ease; /* Animação para aparecer */
+        border: solid 2px var(--branco);
+        border-radius: 40px;
+        
+        /* ... */
+    }
+
+    .cabecalho__nav.ativo {
+        opacity: 1; /* Aparece */
+        pointer-events: auto; /* Recebe cliques */
+    }
+        
+    /* 4. MUDAR LAYOUT DOS LINKS PARA COLUNA */
+    .cabecalho__secoes {
+        flex-direction: column; /* Links em coluna vertical */
+        align-items: flex-start; /* Alinha o texto à esquerda */
+        gap: 1rem;
+        padding: 1rem 2rem;
+        width: 100%;
+        background: none; /* Remove o fundo radial no mobile */
+        border: none; /* Remove a borda no mobile */
+    }
+    
+    /* 5. MOSTRAR ÍCONES NO MOBILE (Se estavam escondidos no desktop) */
+    .secao__icon {
+        /* Se você usou 'display: none;' neles no desktop, mude para 'display: block;' */
+        display: block; 
+    }
+    
+    /* 6. Ajustar o estilo do link no mobile */
+    .secao__link {
+        font-size: 1.2rem;
+        width: 100%;
+        padding: 0.5rem 0;
+        justify-content: flex-start;
+    }
+
+}

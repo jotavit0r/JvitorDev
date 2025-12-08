@@ -1,0 +1,241 @@
+/* --- Seção de Contato --- */
+.secao-contato {
+    font-family: var(--font-texto);
+    color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    max-width: 1100px;
+    margin: 0 auto 100px;
+    padding: 80px 40px;
+    border-radius: 20px; /* Opcional: para a seção inteira */
+}
+
+/* --- Cabeçalho (Título e Subtítulo) --- */
+.contato-header {
+    font-family: var(--font-principal);
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.contato__titulo{
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #555;
+    display: block;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.contato-header h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+}
+
+/* --- Wrapper (Layout de 2 Colunas) --- */
+.contato-wrapper {
+    border: 2px solid #02b992;
+    border-radius: 20px;
+    padding: 30px;
+    display: grid;
+    /* (50/50) - Ajuste '1fr 1.5fr' se quiser o form maior */
+    grid-template-columns: 1fr 1fr; 
+    gap: 60px;
+    align-items: flex-start;
+}
+
+/* --- Coluna da Esquerda (Informações) --- */
+.contato-info h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #f0f0f0;
+    margin-top: 0;
+}
+.contato-info .sub-info {
+    font-size: 1.5rem;
+    color: #00FFC0; /* Cor de acento */
+    font-weight: 500;
+    margin-top: -10px;
+    margin-bottom: 30px;
+}
+.info-bloco {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.1rem;
+    color: #a0a0a0;
+    margin-bottom: 15px;
+    /* (Adicione ícones aqui usando ::before se desejar) */
+}
+
+.logos__contatos{
+    width: 30px;
+    height: auto;
+}
+
+.bloco__redes{
+    margin-left: 35px;
+    margin-top: -5px;
+}
+
+.bloco__redes a{
+    text-decoration: none;
+}
+
+/* --- Coluna da Direita (Formulário) --- */
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #b6b6b6;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    background-color: #1a1a1a; /* Fundo do input */
+    
+    /* Borda sutil alinhada com seus cards */
+    border: 1px solid #02755cd7; 
+    
+    border-radius: 10px;
+    color: #f0f0f0;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    box-sizing: border-box; /* Importante */
+    
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* --- EFEITO DE FOCO (Glow) --- */
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #00FFC0; /* Borda acende */
+    
+    /* Brilho (glow) com sua cor de acento */
+    box-shadow: 0 0 15px rgba(0, 255, 192, 0.3); 
+}
+
+.form-group textarea {
+    resize: vertical;
+    height: 85px;
+}
+
+/* --- Botão de Enviar --- */
+.btn-enviar {
+    display: inline-block;
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff; /* Texto branco */
+    
+    /* Gradiente (igual ao seu botão "Quero meu site") */
+    background: linear-gradient(145deg, #00FFC0, #00A07C);
+    
+    border-radius: 50px; /* Estilo "pill" */
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    /* Brilho do botão */
+    box-shadow: 0 5px 20px rgba(0, 255, 192, 0.2);
+}
+
+.btn-enviar:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 10px 30px rgba(0, 255, 192, 0.3);
+}
+
+/* Adicione estilos para os estados do botão */
+.btn-enviar.is-loading {
+    /* (Estilo de loading - ex: desabilita clique) */
+    cursor: wait;
+    opacity: 0.8;
+}
+
+.btn-enviar.is-success {
+    /* (Estilo de sucesso - ex: fundo verde mais forte) */
+    background: #00A07C; /* Verde mais escuro de sucesso */
+    cursor: default;
+}
+
+@media screen and (max-width: 480px) {
+    
+    /* 1. Ajuste de Padding e Margem da Seção Principal */
+    .secao-contato {
+        /* Reduz o padding lateral e a margem inferior */
+        padding: 40px 5%; 
+        margin-bottom: 50px;
+    }
+    
+    /* 2. Empilhamento das Colunas (Informação e Formulário) */
+    .contato-wrapper {
+        /* MÁGICA: Muda o grid de 2 colunas para 1 coluna */
+        grid-template-columns: 1fr; 
+        gap: 30px; /* Reduz o espaçamento vertical entre os blocos */
+        padding: 20px; /* Reduz o padding interno do wrapper */
+    }
+
+    /* 3. Redução de Fontes do Cabeçalho */
+    .contato-header h2 {
+        font-size: 2rem; /* Reduz o título principal */
+    }
+
+    /* 4. Ajuste na Coluna de Informações */
+    .contato-info h3 {
+        font-size: 1.5rem; /* Título da coluna de info menor */
+    }
+
+    .contato-info .sub-info {
+        font-size: 1.2rem; /* Subtítulo da coluna de info menor */
+        margin-bottom: 20px;
+    }
+
+    .info-bloco {
+        font-size: 1rem; /* Fonte das informações de contato menor */
+    }
+    
+    .logos__contatos{
+        width: 25px; /* Reduz o tamanho das logos das redes */
+    }
+
+    .bloco__redes{
+        margin-left: 30px; /* Ajusta a margem */
+    }
+
+    /* 5. Ajuste nos Campos do Formulário */
+    .form-group label {
+        font-size: 0.9rem; /* Labels menores */
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 8px; /* Padding interno menor */
+        font-size: 0.95rem;
+    }
+    
+    .form-group textarea {
+        height: 70px; /* Altura menor para o campo de mensagem */
+    }
+
+    /* 6. Ajuste do Botão */
+    .btn-enviar {
+        width: 100%; /* Opcional: Faz o botão ocupar a largura total do formulário */
+        padding: 10px 20px; 
+        font-size: 0.95rem;
+    }
+    
+    .btn-enviar:hover {
+        /* Desativa o efeito de crescimento (scale) no mobile para evitar problemas de layout */
+        transform: translateY(-3px); 
+    }
+}

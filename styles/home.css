@@ -1,0 +1,153 @@
+#home{
+    display: flex;
+    align-items: center;
+    margin: 11% 10% 10% 10%;
+    text-align: center;
+    
+}
+
+/* Efeito radial de luz */
+#home::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 150%;
+  background: radial-gradient(circle at top center, #004246, transparent 80%);
+  z-index: -1;
+}
+
+.home__text{
+    color: var(--branco);
+}
+
+.home__titulo{
+    font-family: var(--font-principal);
+    font-size: 3.8rem;
+    font-weight: 700;
+    margin-bottom: -0.8rem;
+
+     /* Gradiente aplicado ao fundo */
+    background: linear-gradient(90deg, #ffffff, #e8f1ef,#7b84a1);
+    
+    /* Faz o fundo preencher apenas o texto */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    /* Para compatibilidade com outros navegadores */
+    background-clip: text;
+    color: transparent;
+
+    /* Opcional: brilho suave */
+    text-shadow: 0 0 15px rgba(244, 247, 246, 0.397);
+
+}
+
+.titulo__gradiente{
+    font-family: var(--font-principal);
+    
+    font-weight: 700;
+    text-align: center;
+
+    background: linear-gradient(90deg, #74cf74,#5dcab4,#40c8f1,#ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    /* Para compatibilidade com outros navegadores */
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 15px rgba(0, 255, 204, 0.479);
+}
+
+.home__subtitulo{
+    font-size: 1.2rem;
+    font-family: var(--font-texto);
+    font-weight: 400;
+    color: #cecece;
+    margin-bottom: 2rem;
+    padding: 0 12rem;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.418);
+}
+
+.subtitulo__destaque{
+    color: var(--branco);
+    text-shadow: 0 0 15px rgb(255, 255, 255);
+}
+
+.cta__btn{
+    display: inline-block;
+    background: linear-gradient(90deg, #77d377,#50af9c,#29809b);
+    border-radius: 8px;
+    color: var(--branco);
+    text-decoration: none;
+    padding: 1rem;
+    font-family: var(--font-texto);
+    font-weight: 700;
+    box-shadow: 0 0 20px rgba(24, 175, 142, 0.466);
+    transition: transform 0.3s ease;
+}
+
+.cta__btn:hover{
+    transform: scale(1.1);
+}
+
+.btn__projetos{
+    background: transparent;
+    border: 1px solid var(--branco);
+    margin-left: 0.4rem;
+    box-shadow: none;
+}
+
+.btn__projetos:hover{
+    background: #002c2e;
+}
+
+.imagem__jv{
+    width: 450px;
+    height: auto;
+}    
+
+@media screen and (max-width: 480px) {
+    
+    /* 1. Ajuste de Margens e Padding */
+    #home {
+        /* Reduz as margens laterais para celular */
+        margin: 5% 5% 10% 5%; 
+        /* Remove o padding-top se já foi adicionado no body, ou mantenha: */
+        padding-top: 50px; 
+    }
+    
+    /* 2. Redução do Tamanho do Título Principal */
+    .home__titulo {
+        font-size: 2.5rem; /* Reduz de 3.8rem para algo menor */
+        margin-bottom: -0.5rem;
+    }
+    
+    /* 3. Redução do Tamanho do Título Gradiente */
+    .titulo__gradiente {
+        font-size: 2.5rem; /* Deve ter o mesmo tamanho do título principal */
+    }
+
+    /* 4. Redução do Tamanho do Subtítulo e Remoção do Padding Desnecessário */
+    .home__subtitulo {
+        font-size: 1rem; /* Tamanho padrão para leitura mobile */
+        /* Remove o grande padding lateral que quebrava o layout */
+        padding: 0; 
+        margin-bottom: 1.5rem; /* Ajusta o espaçamento inferior */
+    }
+
+    /* 5. Ajuste de Botões (Se houver) */
+    .home__botoes {
+        display: flex;
+        flex-direction: column; /* Se os botões estiverem lado a lado, eles se empilham */
+        gap: 15px;
+    }
+    
+    .cta__btn {
+        width: 100%; /* Botão ocupa a largura total no mobile */
+        max-width: 250px; /* Limita a largura se o botão for muito grande */
+        margin: 0 auto; /* Centraliza o botão */
+    }
+}
