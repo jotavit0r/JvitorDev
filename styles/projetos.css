@@ -125,7 +125,7 @@
     }
 
     .lista__projetos{
-        gap: 10px;
+        gap: 20px;
     }
 
     /* 2. Empilhamento dos Cards (Texto em cima, Imagem embaixo) */
@@ -180,4 +180,5 @@
     .categoria__item {
         font-size: 1rem; 
     }
+
 }
