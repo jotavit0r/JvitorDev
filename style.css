@@ -33,18 +33,14 @@ body{
   font-weight: 700;
   text-align: center;
 
-  /* Gradiente aplicado ao fundo */
   background: linear-gradient(90deg, #6f7e94, #d1ffd9);
   
-  /* Faz o fundo preencher apenas o texto */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   
-  /* Para compatibilidade com outros navegadores */
   background-clip: text;
   color: transparent;
-
-  /* Opcional: brilho suave */
+    
   text-shadow: 0 0 15px rgba(0, 255, 204, 0.2);
 }
 
@@ -58,49 +54,39 @@ body{
      -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     
-    /* Para compatibilidade com outros navegadores */
     background-clip: text;
     color: transparent;
 }
 
-/* --- Estilo do "Blob" que Segue o Cursor --- */
 .cursor-blob {
-    position: fixed; /* Fixado na tela para seguir o mouse */
-    pointer-events: none; /* ESSENCIAL: Permite clicar em elementos por trás do blob */
-    width: 80px; /* Tamanho inicial do blob (ajuste conforme desejar) */
+    position: fixed; 
+    pointer-events: none; 
+    width: 80px; 
     height: 80px;
-    border-radius: 50%; /* Forma circular */
+    border-radius: 50%; 
     
-    /* Gradiente com sua cor de destaque (ciano/verde) */
     background: radial-gradient(circle, rgba(0, 255, 191, 0.459) 0%, transparent 70%);
     
-    filter: blur(40px); /* O DESFOQUE do brilho */
-    opacity: 0; /* Começa invisível */
-    transform: translate(-50%, -50%); /* Centra o blob no cursor */
-    z-index: 9999; /* Garante que fique acima de tudo */
-    transition: opacity 0.5s ease; /* Transição suave para aparecer/desaparecer */
+    filter: blur(40px); 
+    opacity: 0; 
+    transform: translate(-50%, -50%); 
+    z-index: 9999; 
+    transition: opacity 0.5s ease; 
 
-    /* smooth transition for movement (optional but nice) */
-    /* transition: transform 0.1s ease-out, opacity 0.5s ease; */
 }
 
-/* Opcional: Efeito de desvanecimento ao sair do site/elemento */
 body:hover .cursor-blob {
-    opacity: 1; /* Torna o blob visível quando o mouse entra no body */
+    opacity: 1; 
 }
 
-/* --- Dot Navigation (Scrollspy) --- */
 .dot-navigation {
-    /* 1. POSICIONAMENTO (Canto direito no meio) */
-    position: fixed; /* Fica fixo na tela */
-    right: 20px;     /* Distância da borda direita */
-    top: 50%;        /* Coloca o TOPO do elemento no meio */
+    position: fixed;
+    right: 20px;    
+    top: 50%;        
     
-    /* Puxa o elemento para cima pela metade da sua altura 
-       para centralizá-lo PERFEITAMENTE */
     transform: translateY(-50%); 
     
-    z-index: 1000; /* Garante que fique acima de outros conteúdos */
+    z-index: 1000; 
 }
 
 .dot-navigation ul {
@@ -108,39 +94,31 @@ body:hover .cursor-blob {
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: column; /* Empilha as bolinhas verticalmente */
-    gap: 18px; /* Espaço entre as bolinhas */
+    flex-direction: column; 
+    gap: 18px; 
 }
 
-/* 2. ESTILO DAS BOLINHAS (Dots) */
 .dot-navigation li a {
     display: block;
     width: 10px;
     height: 10px;
     
-    /* Cor da bolinha inativa (cinza sutil) */
     background-color: rgba(255, 255, 255, 0.3);
     
-    border-radius: 50%; /* Círculo perfeito */
+    border-radius: 50%; 
     cursor: pointer;
     
-    /* Animação suave para a troca de cor/tamanho */
     transition: all 0.3s ease;
 }
 
-/* 3. ESTILO DA BOLINHA ATIVA */
 .dot-navigation li a.active {
-    /* Cor de acento (a que você usa no seu site) */
     background-color: #00e6d2; 
     
-    /* Efeito de "crescer" */
     transform: scale(1.4);
     
-    /* Efeito de "brilho" (glow) */
     box-shadow: 0 0 15px rgba(0, 255, 192, 0.7);
 }
 
-/* 4. EFEITO HOVER (na bolinha inativa) */
 .dot-navigation li a:hover {
     background-color: rgba(255, 255, 255, 0.7);
     transform: scale(1.2);
@@ -150,17 +128,14 @@ body:hover .cursor-blob {
 
 html, body {
   max-width: 100%;
-  overflow-x: hidden; /* ou overflow-x: clip; em browsers modernos */
+  overflow-x: hidden; 
 }
-    /* 1. ESCONDE O BLOB/CURSOR CUSTOMIZADO */
     .cursor-blob {
-        /* ESSENCIAL: O cursor customizado não é usado em touchscreens */
         display: none; 
     }
-    
-    /* 2. ESCONDE A NAVEGAÇÃO DE BOLINHAS (DOT NAVIGATION) */
+
     .dot-navigation {
-        /* Remove o elemento do fluxo para liberar a lateral direita */
         display: none; 
     }
+
 }
