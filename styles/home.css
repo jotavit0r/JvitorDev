@@ -6,7 +6,6 @@
     
 }
 
-/* Efeito radial de luz */
 #home::before {
   content: "";
   position: absolute;
@@ -29,18 +28,14 @@
     font-weight: 700;
     margin-bottom: -0.8rem;
 
-     /* Gradiente aplicado ao fundo */
     background: linear-gradient(90deg, #ffffff, #e8f1ef,#7b84a1);
     
-    /* Faz o fundo preencher apenas o texto */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     
-    /* Para compatibilidade com outros navegadores */
     background-clip: text;
     color: transparent;
 
-    /* Opcional: brilho suave */
     text-shadow: 0 0 15px rgba(244, 247, 246, 0.397);
 
 }
@@ -55,7 +50,6 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     
-    /* Para compatibilidade com outros navegadores */
     background-clip: text;
     color: transparent;
     text-shadow: 0 0 15px rgba(0, 255, 204, 0.479);
@@ -111,43 +105,36 @@
 
 @media screen and (max-width: 480px) {
     
-    /* 1. Ajuste de Margens e Padding */
     #home {
-        /* Reduz as margens laterais para celular */
         margin: 5% 5% 10% 5%; 
-        /* Remove o padding-top se já foi adicionado no body, ou mantenha: */
         padding-top: 50px; 
     }
     
-    /* 2. Redução do Tamanho do Título Principal */
     .home__titulo {
-        font-size: 2.5rem; /* Reduz de 3.8rem para algo menor */
+        font-size: 2.5rem; 
         margin-bottom: -0.5rem;
     }
     
-    /* 3. Redução do Tamanho do Título Gradiente */
     .titulo__gradiente {
-        font-size: 2.5rem; /* Deve ter o mesmo tamanho do título principal */
+        font-size: 2.5rem;
     }
 
-    /* 4. Redução do Tamanho do Subtítulo e Remoção do Padding Desnecessário */
     .home__subtitulo {
-        font-size: 1rem; /* Tamanho padrão para leitura mobile */
-        /* Remove o grande padding lateral que quebrava o layout */
+        font-size: 1rem;
         padding: 0; 
-        margin-bottom: 1.5rem; /* Ajusta o espaçamento inferior */
+        margin-bottom: 1.5rem;
     }
 
-    /* 5. Ajuste de Botões (Se houver) */
     .home__botoes {
         display: flex;
-        flex-direction: column; /* Se os botões estiverem lado a lado, eles se empilham */
+        flex-direction: column;
         gap: 15px;
     }
     
     .cta__btn {
-        width: 100%; /* Botão ocupa a largura total no mobile */
-        max-width: 250px; /* Limita a largura se o botão for muito grande */
-        margin: 0 auto; /* Centraliza o botão */
+        width: 100%;
+        max-width: 250px;
+        margin: 0 auto;
     }
+
 }
