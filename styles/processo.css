@@ -1,0 +1,171 @@
+/* --- Seção Principal --- */
+#processo {
+    font-family: var(--font-texto);
+    color: #ffffff;
+    padding: 60px 40px 60px;
+    box-sizing: border-box;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- Cabeçalho da Seção --- */
+.processo__cabecalho {
+    font-family: var(--font-principal);
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.subtitulo__processo {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #555;
+    display: block;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.frase__processo {
+    font-size: 2.5rem; /* "Here's how it works" */
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+}
+
+/* --- Container dos Cartões --- */
+.processo__container {
+    display: flex; /* Alinha os cartões lado a lado */
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap; /* Permite quebrar linha em telas menores */
+}
+
+/* --- Estilo Individual do Cartão --- */
+.cartao__processo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: transparent;
+    border-radius: 20px;
+    border: 3px solid var(--verde);
+    padding: 40px 35px 60px;
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 340px; /* Largura fixa para cada cartão */
+    height: 340px;
+    overflow: hidden;
+    box-sizing: border-box;
+    position: relative; /* Para posicionar o número */
+
+    transition: all 0.3s ease;
+}
+
+.cartao__processo::before{
+    content: '';
+    position: absolute;
+    top: 30px; /* Ajuste para onde o brilho deve começar */
+    left: 175px; /* Ajuste para onde o brilho deve começar */
+    width: 120px; /* Tamanho da área do brilho */
+    height: 120px; /* Tamanho da área do brilho */
+    border-radius: 50%; /* Para que o brilho seja circular */
+    
+    /* Um gradiente radial, como o da sua imagem */
+    background: radial-gradient(circle, #00ffc8 30%,#67f5ff 100%, transparent 40%); 
+    
+    /* O DESFOQUE! Quanto maior o valor em 'px', mais desfocado. */
+    filter: blur(50px); /* Experimente valores como 50px, 100px, 150px */
+    
+    opacity: 0.3; /* Ajuste a opacidade para ser mais sutil */
+    z-index: 0; /* Coloca o brilho atrás do conteúdo */
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.cartao__processo:hover::before {
+    transform: translate(0%, 0%) scale(1.2); /* Aumenta o brilho */
+    opacity: 0.7; /* Torna-o visível */
+}
+
+.cartao__processo:hover {
+    border-color: #00FFC0; /* Cor do seu acento verde/ciano */
+    transform: translateY(-3px); /* Sobe um pouco para efeito */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 
+                0 0 40px rgba(0, 255, 192, 0.2); /* Brilho da cor de acento */
+}
+
+.cartao__processo:hover .numero {
+    /* Adiciona um brilho sutil ao redor do número */
+    filter: drop-shadow(0 0 3px rgba(0, 255, 191, 0.384));
+    color: #00FFC0; /* Opcional: muda a cor do número para a cor de destaque */
+    transform: scale(1.05); /* Opcional: faz o número crescer um pouquinho */
+    transition: all 0.3s ease; 
+}
+
+/* --- Conteúdo do Cartão --- */
+.cartao__processo .numero {
+    font-family: var(--font-diferente);
+    font-size: 4rem;
+    font-weight: 600;
+    color: var(--verde-claro); 
+
+}
+
+.cartao__processo__titulo {
+    font-size: 1.5rem; /* Título (Discover, Design, Deliver) */
+    font-weight: 600;
+    color: #ffffff;
+    margin-top: 35px; /* Espaço para o número ficar acima */
+    margin-bottom: 20px;
+}
+
+.cartao__processo__texto {
+    font-family: 'Inter', sans-serif; /* Fonte diferente para o parágrafo */
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #807f7f;
+    margin: 0;
+}
+
+@media screen and (max-width: 480px) {
+    
+    /* 1. Empilha os Cartões Verticalmente */
+    .processo__container {
+        /* MÁGICA: Muda a direção para coluna, empilhando os itens */
+        flex-direction: column; 
+        gap: 25px; /* Reduz o espaçamento vertical entre os cartões */
+        padding: 0 3%; /* Adiciona um pequeno padding lateral para respiro */
+    }
+
+    /* 2. Ajuste do Tamanho da Fonte (Melhor Legibilidade) */
+    .frase__processo {
+        font-size: 2rem; /* Reduz o título principal */
+    }
+    
+    /* 3. Ajuste do Card Individual */
+    .cartao__processo {
+        /* Ocupa a largura total disponível */
+        width: 100%; 
+        max-width: none;
+        padding: 30px; /* Reduz o padding interno do cartão */
+        margin-bottom: 0px;
+        text-align: left; /* Garante que o texto fique alinhado à esquerda no mobile */
+    }
+    
+    /* 4. Ajuste do Conteúdo Interno do Cartão */
+    .numero {
+        font-size: 2.5rem; /* Reduz o número grande (01, 02, 03) */
+        margin-bottom: 5px;
+        margin-top: -10px;
+    }
+    
+    .cartao__processo__titulo {
+        font-size: 1.2rem; /* Reduz o título do passo */
+    }
+    
+    .cartao__processo__texto {
+        font-size: 0.9rem; /* Reduz o texto de descrição */
+        margin-bottom: 5px;
+    }
+}

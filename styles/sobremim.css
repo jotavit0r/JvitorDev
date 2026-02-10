@@ -1,0 +1,143 @@
+#sobremim {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 40px;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden; /* Para conter o brilho */
+}
+
+/* Efeito de brilho/aurora no fundo */
+#sobremim::before {
+    content: '';
+    position: absolute;
+    bottom: -300px; /* Posiciona o brilho na parte inferior */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 600px;
+    /* Cor e opacidade do brilho (azul-petróleo/ciano) */
+    background: radial-gradient(circle,#00524b, transparent 80%);
+    filter: blur(150px); /* Suaviza o brilho */
+    z-index: 0;
+}
+
+.sobremim__logo{
+    width: 200px;
+    height: auto;
+}
+/* --- Barra de Logos --- */
+.sobremim__marcas {
+    display: none;
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px; /* Espaço entre os logos */
+    /* list-style: none;
+    padding: 0;
+    margin-bottom: 50px; /* Espaço abaixo da barra de logos */
+    /* flex-wrap: wrap; /* Permite que os logos quebrem a linha em telas menores */
+    /* position: relative; /* Para garantir que fique acima do brilho */
+    /* z-index: 1; */ 
+} 
+
+
+
+/* --- Conteúdo de Texto --- */
+.sobremim__texto {
+    max-width: 850px; /* Limita a largura do texto */
+    z-index: 1;
+}
+
+.sobremim__header {
+    font-family: var(--font-principal);
+    text-align: left;
+    margin-bottom: 50px;
+}
+
+.sobremim__titulo {
+    font-family: var(--font-principal);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.sobremim__subtitulo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-top: 8px;
+}
+
+
+.sobremim__paragrafo {
+    font-family: var(--font-texto);
+    font-size: 1.7em; /* Tamanho de fonte grande */
+    line-height: 1.7;
+    margin-bottom: 40px;
+    color: #d1d1d1;
+}
+
+/* Destaque para os nomes das marcas no primeiro parágrafo */
+.sobremim__negrito {
+    color: #ffffff; /* Marcas em branco puro para destaque */
+    font-weight: 600; /* A fonte original não parece ser "bold", apenas mais clara */
+}
+
+/* --- Status Atual --- */
+.status__atual {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: #999;
+}
+
+.status__atual__texto{
+    margin: 0;
+}
+
+@media screen and (max-width: 480px) {
+    
+    /* 1. Ajuste de Padding da Seção Principal */
+    #sobremim {
+        /* Reduz o padding lateral da seção */
+        padding: 40px 5%; 
+    }
+
+    #sobremim::before{
+        max-width: 100%;
+    }
+    
+    /* 2. Ajuste do Bloco de Texto */
+    .sobremim__texto {
+        /* Remove o max-width fixo para celular ou o define como none */
+        max-width: none; 
+        padding: 0;
+    }
+
+    /* 3. Redução de Fontes do Cabeçalho */
+    .sobremim__titulo {
+        font-size: 0.8rem; /* Reduz o subtítulo "SOBRE MIM" */
+        margin-bottom: 5px;
+    }
+
+    .sobremim__subtitulo {
+        font-size: 2rem; /* Reduz o título principal */
+    }
+
+    /* 4. Redução das Fontes dos Parágrafos */
+    .sobremim__paragrafo {
+        /* Garante uma fonte menor para melhor leitura */
+        font-size: 1.1rem; 
+        line-height: 1.5;
+        margin-bottom: 15px; /* Reduz o espaçamento entre parágrafos */
+    }
+
+    .status__atual{
+        font-size: 1rem;
+    }
+
+}

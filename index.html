@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="script_blob.js"></script>
+    <script src="script__navegacao.js"></script>
+    <script src="script__btn__contatos.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZ1HQGFRKB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-BZ1HQGFRKB');
+    </script>
+    <link rel="icon" type="image/svg" href="Imagens/logo_jv.svg">
+    <title>JVitorDev</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <img src="Imagens/logo_jv.svg" alt="Logo JV" class="cabecalho__logo">
+        <button class="menu-hamburger" aria-label="Abrir Menu" aria-expanded="false">
+        <span class="hamburger-icon"></span>
+        </button>
+        <nav class="cabecalho__nav">
+            <ul class="cabecalho__secoes">
+                <li class="secao">
+                    <a href="#home" class="secao__link ativo">
+                        <img src="Imagens/home.svg" alt="Home.svg" class="secao__icon">
+                        Home
+                    </a>
+                </li>
+                <li class="secao">
+                    <a href="#processo" class="secao__link">
+                        <img src="Imagens/Processo.svg" alt="Processo.svg" class="secao__icon">
+                        Processo
+                    </a>
+                </li>
+                <li class="secao">
+                    <a href="#projetos" class="secao__link">
+                        <img src="Imagens/pasta.svg" alt="Projetos.svg" class="secao__icon">
+                        Projetos
+                    </a>
+                </li>
+                <li class="secao">
+                    <a href="#depoimentos" class="secao__link">
+                        <img src="Imagens/clientes.svg" alt="FAQ.svg" class="secao__icon">
+                        Depoimentos
+                    </a>
+                </li>
+                <li class="secao">
+                    <a href="#sobremim" class="secao__link"> 
+                        <img src="Imagens/perfil.svg" alt="Sobre-mim.svg" class="secao__icon">
+                        Sobre mim
+                    </a>
+                </li>
+                <li class="secao">
+                    <a href="#contato" class="secao__link">
+                        <img src="Imagens/telefone.svg" alt="Contato.svg" class="secao__icon">
+                        Contato
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <nav class="dot-navigation">
+            <ul>
+                <li><a href="#home" class="active"></a></li>
+                <li><a href="#processo"></a></li>
+                <li><a href="#projetos"></a></li>
+                <li><a href="#depoimentos"></a></li>
+                <li><a href="#sobremim"></a></li>
+                <li><a href="#contato"></a></li>
+            </ul>
+        </nav>
+        <section id="home" >
+            <div class="home__text">
+                <h1 class="home__titulo">Sites que constroem autoridade <span class="titulo__gradiente">e geram oportunidades reais.</span></h1>
+                <p class="home__subtitulo">
+                Desenvolvo experiências digitais que valorizam sua marca, fortalecem sua presença online e <span class="subtitulo__destaque">geram resultados de verdade.</span>
+                </p>
+                <div class="home__botoes">
+                <a href="https://api.whatsapp.com/send?phone=5571993192512&text=Olá,%20vi%20o%20portfolio%20e%20gostaria%20de%20começar%20o%20meu%20site." class="cta__btn">Quero meu site</a>
+                <a href="#projetos" class="cta__btn btn__projetos">Projetos Feitos</a>
+                </div>
+            </div>
+            <!-- <div class="home__imagem">
+                <img src="Imagens/foto_jv.png" alt="Foto Jv" class="imagem__jv">
+            </div> -->
+        </section>
+        <section class="introducao">
+            <div class="introducao__tags">
+                <p class="tag ux"><span class="bola">•</span> IA & Experiências</p>
+                <p class="tag ui"><span class="bola">•</span> Design UI & UX</p>
+                <p class="tag web"><span class="bola">•</span> Web Design</p>
+            </div>
+            <div class="introducao__textos">
+                <p class="introducao__saudacao">Olá!</p>
+                <h2 class="introducao__texto">
+                    meu foco está em unir <span class="introducao__texto__destaque">estratégia visual clara, design intuitivo
+                    e empatia pelo usuário</span> para criar interfaces que conectam pessoas e marcas.
+                </h2>
+            </div>
+
+            <div class="introducao__tags">
+                <p class="tag responsive"><span class="bola">•</span> Design Responsivo</p>
+                <p class="tag brand"><span class="bola">•</span> Identidade Visual</p>
+                <p class="tag prototype"><span class="bola">•</span> Prototipagem</p>
+            </div>
+
+            <!-- 🟢, 🔵, 🟣, 🟠, 🔴, 🟡 -->
+        </section>
+
+        <section id="processo">
+        
+            <header class="processo__cabecalho">
+                <span class="subtitulo__processo">— PASSO A PASSO —</span>
+                <h2 class="frase__processo">O caminho para um site de <span class="autoridade">autoridade</span></h2>
+            </header>
+
+            <div class="processo__container">
+                
+                <div class="cartao__processo" id="card-1">
+                    <span class="numero">01</span>
+                    <h3 class="cartao__processo__titulo">Descoberta & Estratégia</h3>
+                    <p class="cartao__processo__texto">Imersão para definir seus objetivos, público-alvo e metas de conversão. A base estratégica para o sucesso do projeto.</p>
+                </div>
+
+                <div class="cartao__processo" id="card-2">
+                    <span class="numero">02</span>
+                    <h3 class="cartao__processo__titulo">Design ( UI / UX )</h3>
+                    <p class="cartao__processo__texto">Transformando a estratégia em design. Da estrutura (UX) à interface visual (UI) de alta fidelidade no Figma, focando em autoridade.</p>
+                </div>
+
+                <div class="cartao__processo" id="card-3">
+                    <span class="numero">03</span>
+                    <h3 class="cartao__processo__titulo">Desenvolvimento & Entrega</h3>
+                    <p class="cartao__processo__texto">Convertendo o design em código limpo e performático. O site é entregue 100% responsivo, rápido e pronto para gerar resultados.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="projetos">
+        
+            <header class="projetos__header">
+                <span class="projetos__titulo">— PROJETOS MAIS RECENTES —</span>
+                <h2 class="projetos__titulo_detalhado" >Um vislumbre dos meus trabalhos mais recentes</h2>
+            </header>
+
+            <div class="lista__projetos">
+
+                <article class="card__projeto">
+                    <div class="card__texto">
+                        <a class="link__projeto" href="https://sleeppremiumba.com"><h3 class="card__titulo">Sleep Premium — Loja Especialista em Colchões de Alto Conforto</h3></a>
+                        <p class="card__descricao">Este site foi desenvolvido como uma plataforma de conversão e autoridade para uma loja física com mais de 25 anos de tradição no mercado de colchões.
+                            O projeto traduz a experiência da Sleep Premium em uma jornada digital clara e objetiva, conectando conforto, saúde e qualidade de vida em uma navegação moderna.
+                            
+                            O objetivo é facilitar a escolha do colchão ideal e direcionar o visitante para um atendimento imediato via WhatsApp, transformando interesse em compra com confiança e proximidade.                        
+                        <div class="card__categoria">
+                            <div class="categoria">
+                                <span class="categoria__nome">Nicho</span>
+                                <span class="categoria__item">Loja de Colchões</span>
+                            </div>
+                            <div class="categoria">
+                                <span class="categoria__nome">Tempo de trabalho</span>
+                                <span class="categoria__item">6 dias</span>
+                            </div>
+                            <div class="categoria">
+                                <span class="categoria__nome">Ano</span>
+                                <span class="categoria__item">2026</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card__imagem">
+                        <a class="link__projeto" href="https://sleeppremiumba.com"><img src="Imagens/mockupcomputador_sp.jpeg" alt="Foto do site Sleep Premium" class="imagem__site"></a>
+                    </div>
+                </article>
+                
+                <article class="card__projeto">
+                    <div class="card__texto">
+                        <a class="link__projeto" href="https://jvitordev.com"><h3 class="card__titulo">JvitorDev – Plataforma Pessoal de Marca e Portfólio</h3></a>
+                        <p class="card__descricao">Este portfólio foi arquitetado como uma plataforma de marca e uma ferramenta de conversão. O projeto traduz minha filosofia de design em uma experiência de usuário real, servindo como a principal demonstração das minhas competências em UI/UX e desenvolvimento. O objetivo é construir autoridade imediata e converter visitantes em clientes através de uma jornada de navegação estratégica.                        
+                        <div class="card__categoria">
+                            <div class="categoria">
+                                <span class="categoria__nome">Nicho</span>
+                                <span class="categoria__item">Portfólio</span>
+                            </div>
+                            <div class="categoria">
+                                <span class="categoria__nome">Tempo de trabalho</span>
+                                <span class="categoria__item">10 dias</span>
+                            </div>
+                            <div class="categoria">
+                                <span class="categoria__nome">Ano</span>
+                                <span class="categoria__item">2025</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card__imagem">
+                        <a class="link__projeto" href="https://jvitordev.com"><img src="Imagens/mockupcelular_jvitordev.jpeg" alt="Foto do site JVitorDev" class="imagem__site"></a>
+                    </div>
+                </article>
+
+                <article class="card__projeto">
+                    <div class="card__texto">
+                        <a class="link__projeto" href="https://vsstorebr.com.br/"><h3 class="card__titulo">Versatil Store - Site Institucional para Assistência Técnica</h3></a>
+                        <p class="card__descricao">Um site institucional moderno e focado em conversão para a assistência técnica Versatil Store, projetado para construir confiança e gerar orçamentos. A plataforma destaca os diferenciais da loja, utiliza prova social com avaliações reais e foca na captação de leads através de call-to-actions diretos para o WhatsApp.                        
+                        <div class="card__categoria">
+                            <div class="categoria">
+                                <span class="categoria__nome">Nicho</span>
+                                <span class="categoria__item">Assistência Técnica</span>
+                            </div>
+                            <div class="categoria">
+                                <span class="categoria__nome">Tempo de trabalho</span>
+                                <span class="categoria__item">4 dias</span>
+                            </div>
+                            <div class="categoria">
+                                <span class="categoria__nome">Ano</span>
+                                <span class="categoria__item">2025</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card__imagem">
+                        <a class="link__projeto" href="https://vsstorebr.com.br/"><img src="Imagens/vs_computador.png" alt="Mockup do aplicativo MoonWave" class="imagem__site"></a>
+                    </div>
+                </article>
+                
+            
+
+            </div>
+
+        </section>
+
+        <section id="depoimentos">
+        <div class="testemunhos__descricao">
+            <p class="titulo__testemunhos">— DEPOIMENTOS —</p>
+            <h2 class="subtitulo__secao">O que meus clientes dizem</h2>
+        </div>
+
+        <div class="testemunhos__container">
+
+            <div class="card__testemunho">
+                <span class="icone__aspas">“</span>
+                <p class="depoimento__texto">
+                    O novo site é impecável e, mais importante, vendedor. Nossas vendas online subiram 70% logo no primeiro mês. Resultado imediato e lucro garantido!
+                <div class="info__cliente">
+                    <p class="nome__cliente">Caio Fernandes</p>
+                    <p class="cargo__cliente">CEO, Versatil Store</p>
+                </div>
+            </div>
+
+            <div class="card__testemunho">
+                <span class="icone__aspas">“</span>
+                <p class="depoimento__texto">
+                    O design do site é moderno e eficiente. A estética é impecável e, o que importa, gera vendas. Nossa taxa de conversão disparou, e o faturamento subiu. Trabalho excelente!
+                </p>
+                <div class="info__cliente">                   
+                    <p class="nome__cliente">Victor Andre</p>
+                    <p class="cargo__cliente">CEO, A Vermelhinha</p>
+                </div>
+            </div>
+            
+            </div>
+
+
+        </section>
+
+        <section id="sobremim">
+
+            <ul class="sobremim__marcas">
+                <li class="sobremim__logos"><img src="Imagens/Logo_VScinza.png" alt="Logo Versatil Store" class="sobremim__logo"></li>
+                <li class="sobremim__logos"><img src="Imagens/Logo_jvitorcinza.png" alt="Logo JvitorDev" class="sobremim__logo"></li>
+            </ul>
+
+            <div class="sobremim__texto">
+                
+                <div class="sobremim__header">
+                    <h3 class="sobremim__titulo">— Sobre Mim —</h3>
+                    <p class="sobremim__subtitulo">Conheça mais do meu objetivo</p>
+                </div>
+
+                <p class="sobremim__paragrafo paragrafo__um">
+                    Web designer focado em transformar ideias em soluções digitais impactantes. <span class="sobremim__negrito">Ajudo negócios e empreendedores a estabelecer uma presença online profissional</span> através de projetos com visão clara e forte habilidade técnica.
+                </p>
+
+                <p class="sobremim__paragrafo">
+                    Eu me considero um web designer prático e criativo. Minha especialidade é traduzir conceitos visuais em experiências de usuário funcionais e elegantes, com foco em layouts limpos e responsivos que funcionam perfeitamente em qualquer dispositivo.
+                </p>
+
+                <div class="status__atual">
+                    <p class="status__atual__texto">Trabalho como Web Designer.</p>
+                    <p class="status__atual__texto">Salvador, Bahia, Brasil</p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+    <footer>
+        <section class="secao-contato" id="contato">
+    
+            <header class="contato-header">
+                <p class="contato__titulo">— CONTATO —</p>
+                <h2>Fale Comigo</h2>
+            </header>
+
+            <div class="contato-wrapper">
+                
+                <div class="contato-info">
+                    <h3>Uma ideia, um resultado.</h3>
+                    <p class="sub-info">Comece ainda hoje.</p>
+                    
+                    <div class="info-bloco">
+                        <img src="Imagens/5.svg" alt="Logo WhatsApp" class="logos__contatos">
+                        <span>(71) 99312-2512</span>
+                        </div>
+                    <div class="info-bloco">
+                        <img src="Imagens/6.svg" alt="Logo Gmail" class="logos__contatos">
+                        <span>jvitorah.dev@gmail.com</span>
+                        </div>
+                    <div class="info-bloco">
+                        <img src="Imagens/pin__mapa.svg" alt="Logo Mapa" class="logos__contatos">
+                        <span>Lauro de Freitas, Bahia, Brasil</span>
+                    </div>
+                    <div class="info-bloco">
+                        <img src="Imagens/11.svg" alt="Logo Mapa" class="logos__contatos">
+                        <span>Redes Sociais:</span>
+                    </div>
+                    <div class="info-bloco bloco__redes">
+                        <a href="https://www.instagram.com/jvitorah.dev/"><img src="Imagens/8.svg" alt="Logo Instagram" class="logos__contatos"></a>
+                        <a href="www.linkedin.com/in/joão-vitor-8a444a357"><img src="Imagens/7.svg" alt="Logo Linkedin" class="logos__contatos"></a>
+                        <a href="https://github.com/jotavit0r"><img src="Imagens/9.svg" alt="Logo GitHub" class="logos__contatos"></a>
+                    </div>
+                </div>
+                
+                <div class="contato-form">
+                    <form action="https://formspree.io/f/xyzlgzye" method="POST">
+                        
+                        <div class="form-group">
+                            <label for="name">Nome Completo</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Seu Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-enviar" id="btn-submit">
+                            <span class="btn-text">Começar meu projeto</span>
+                            </button>
+                        
+                    </form>
+                </div>
+                
+            </div>
+        </section>
+    </footer>
+    <div class="cursor-blob"></div>
+</body>
+
+</html>
+
+
+
